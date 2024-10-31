@@ -20,7 +20,7 @@ class BaseClient {
   }
 
   loadHandlers() {
-    readdirSync("./src/Handlers").map(async (file) => {
+    readdirSync("./src/Handlers").forEach(async (file) => {
       const handlerFile = await import(`../Handlers/${file}`);
       const handler = handlerFile.default;
       handler.execute(this.client);
