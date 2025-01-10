@@ -1,6 +1,6 @@
-import { Client, Intents } from "discord.js";
-import { readdirSync } from "node:fs";
-import config from "../base/config.js";
+const { Client, Intents } = require("discord.js");
+const { readdirSync } = require("node:fs");
+const config = require("../base/config.js");
 
 class BaseClient {
   constructor(token) {
@@ -21,8 +21,7 @@ class BaseClient {
 
   loadHandlers() {
     readdirSync("./src/Handlers").forEach(async (file) => {
-      const handlerFile = await import(`../Handlers/${file}`);
-      const handler = handlerFile.default;
+      const handler = await require(`../Handlers/${file}`);
       handler.execute(this.client);
     });
   }

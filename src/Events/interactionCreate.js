@@ -1,8 +1,8 @@
-import config from "../base/config.js";
-import { Collection } from "discord.js";
+const config = require("../base/config.js");
+const { Collection } = require("discord.js");
 const cooldown = new Collection();
 
-export default {
+module.exports = {
   name: "interactionCreate",
   async execute(interaction) {
     const { client } = interaction;

@@ -1,7 +1,7 @@
-import { MessageEmbed, Permissions } from "discord.js";
-import { SlashCommandBuilder } from "@discordjs/builders";
+const { MessageEmbed, Permissions } = require("discord.js");
+const { SlashCommandBuilder } = require("@discordjs/builders");
 
-export const commandBase = {
+module.exports.commandBase = {
   prefixData: {
     name: "ping",
     aliases: ["pong"],

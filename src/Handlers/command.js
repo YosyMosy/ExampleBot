@@ -1,7 +1,7 @@
-import { Collection } from "discord.js";
-import { readdirSync } from "node:fs";
+const { Collection } = require("discord.js");
+const { readdirSync } = require("node:fs");
 
-export default {
+module.exports = {
   async execute(client) {
     client.commands = new Collection();
     client.commandAliases = new Collection();
@@ -17,7 +17,7 @@ export default {
 
         await Promise.all(
           commandFiles.map(async (file) => {
-            const commands = await import(`../Commands/${category}/${file}`);
+            const commands = await require(`../Commands/${category}/${file}`);
 
             if (commands) {
               if (commands.commandBase) {

@@ -2,7 +2,7 @@
   "scripts": {
     "start": "node src/Base/app.js"
   },
-  "type": "module",
+  "type": "commonjs",
   "license": "MIT",
   "dependencies": {
     "@discordjs/rest": "^2.4.0",
