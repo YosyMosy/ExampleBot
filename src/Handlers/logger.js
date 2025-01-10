@@ -1,6 +1,6 @@
-import winston from "winston";
+const winston = require("winston");
 
-export default {
+module.exports = {
   async execute(client) {
     client.logger = winston.createLogger({
       level: "info",

@@ -1,12 +1,12 @@
-import { readdirSync } from "node:fs";
+const { readdirSync } = require("node:fs");
 
-export default {
+module.exports = {
   async execute(client) {
     const eventFiles = readdirSync("./src/Events");
 
     Promise.all(
       eventFiles.map(async (file) => {
-        const event = await import(`../Events/${file}`).then((x) => x.default);
+        const event = await require(`../Events/${file}`);
 
         if (event.once) {
           client.once(event.name, (...args) => event.execute(...args));

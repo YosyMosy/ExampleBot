@@ -1,7 +1,7 @@
-import { EmbedBuilder, PermissionsBitField } from "discord.js";
-import { SlashCommandBuilder } from "@discordjs/builders";
+const { EmbedBuilder, PermissionsBitField } = require("discord.js");
+const { SlashCommandBuilder } = require("@discordjs/builders");
 
-export const commandBase = {
+module.exports.commandBase = {
   prefixData: {
     name: "ping",
     aliases: ["pong"],

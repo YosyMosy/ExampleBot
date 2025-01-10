@@ -1,8 +1,8 @@
-import { ChannelType, Collection, Events } from "discord.js";
-import config from "../base/config.js";
+const { ChannelType, Collection, Events } = require("discord.js");
+const config = require("../base/config.js");
 const cooldown = new Collection();
 
-export default {
+module.exports = {
   name: Events.MessageCreate,
   async execute(message) {
     const { client } = message;

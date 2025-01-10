@@ -1,8 +1,8 @@
-import { ActivityType, Events } from "discord.js";
-import { REST } from "@discordjs/rest";
-import { Routes } from "discord-api-types/v10";
+const { ActivityType, Events } = require("discord.js");
+const { REST } = require("@discordjs/rest");
+const { Routes } = require("discord-api-types/v10");
 
-export default {
+module.exports = {
   name: Events.ClientReady,
   once: true,
   async execute(client) {
