@@ -1,6 +1,6 @@
 const { Client, GatewayIntentBits, Partials } = require("discord.js");
 const { readdirSync } = require("node:fs");
-const config = require("../base/config.js");
+const config = require("./config.js");
 
 class BaseClient {
   constructor(token) {
