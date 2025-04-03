@@ -1,4 +1,4 @@
-import config from "../base/config.js";
+import config from "../Base/config.js";
 import { Collection } from "discord.js";
 const cooldown = new Collection();
 
