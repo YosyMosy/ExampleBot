@@ -1,7 +1,7 @@
 module.exports = {
   execute(client) {
     const handleError = (type, error) => {
-      logger.error(`${type}: ${error.stack || error.message}`);
+      console.error(`${type}: ${error.stack || error.message}`);
     };
 
     const processEvents = {
