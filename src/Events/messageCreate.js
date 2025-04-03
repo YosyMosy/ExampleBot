@@ -1,4 +1,4 @@
-import config from "../base/config.js";
+import config from "../Base/config.js";
 import { Collection } from "discord.js";
 const cooldown = new Collection();
 
@@ -44,21 +44,23 @@ export default {
         if (cooldown.has(`${command.name}-${message.author.id}`)) {
           return message
             .reply({
-              content: `Cooldown is currently active, please try again <t:${Math.floor(waitedDate / 1000)}:R>.`,
+              content: `Cooldown is currently active, please try again <t:${Math.floor(
+                new Date(nowDate + waitedDate).getTime() / 1000
+              )}:R>.`,
             })
             .then((msg) =>
               setTimeout(
                 () => msg.delete(),
                 cooldown.get(`${command.name}-${message.author.id}`) -
-                  Date.now(),
-              ),
+                  Date.now()
+              )
             );
         }
 
         command.prefixRun(client, message, args);
         cooldown.set(
           `${command.name}-${message.author.id}`,
-          Date.now() + command.cooldown,
+          Date.now() + command.cooldown
         );
         setTimeout(() => {
           cooldown.delete(`${command.name}-${message.author.id}`);
