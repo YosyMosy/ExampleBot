@@ -1,5 +1,5 @@
 const { ChannelType, Collection, Events } = require("discord.js");
-const config = require("../base/config.js");
+const config = require("../Base/config.js");
 const cooldown = new Collection();
 
 module.exports = {
@@ -44,15 +44,17 @@ module.exports = {
             cooldown.get(`${command.name}-${message.author.id}`) - nowDate;
           return message
             .reply({
-              content: `Cooldown is currently active, please try again <t:${Math.floor(new Date(nowDate + waitedDate).getTime() / 1000)}:R>.`,
+              content: `Cooldown is currently active, please try again <t:${Math.floor(
+                new Date(nowDate + waitedDate).getTime() / 1000
+              )}:R>.`,
             })
             .then((msg) =>
               setTimeout(
                 () => msg.delete(),
                 cooldown.get(`${command.name}-${message.author.id}`) -
                   Date.now() +
-                  1000,
-              ),
+                  1000
+              )
             );
         }
 
@@ -60,7 +62,7 @@ module.exports = {
 
         cooldown.set(
           `${command.name}-${message.author.id}`,
-          Date.now() + command.cooldown,
+          Date.now() + command.cooldown
         );
 
         setTimeout(() => {
