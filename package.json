@@ -3,6 +3,7 @@
     "start": "node src/Base/app.js"
   },
   "type": "commonjs",
+  "author": "memte.",
   "license": "MIT",
   "dependencies": {
     "@discordjs/rest": "^2.4.0",
