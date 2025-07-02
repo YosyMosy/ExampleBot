@@ -2,9 +2,9 @@
   "scripts": {
     "start": "node src/Base/app.js"
   },
-  "license": "MIT",
-  "author": "memte.",
   "type": "commonjs",
+  "author": "memte.",
+  "license": "MIT",
   "dependencies": {
     "discord.js": "^14.21.0",
     "dotenv": "^16.5.0",
