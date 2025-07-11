@@ -45,7 +45,7 @@ module.exports = {
           return message
             .reply({
               content: `Cooldown is currently active, please try again <t:${Math.floor(
-                new Date(nowDate + waitedDate).getTime() / 1000
+                new Date(nowDate + waitedDate).getTime() / 1000,
               )}:R>.`,
             })
             .then((msg) =>
@@ -53,8 +53,8 @@ module.exports = {
                 () => msg.delete(),
                 cooldown.get(`${command.name}-${message.author.id}`) -
                   Date.now() +
-                  1000
-              )
+                  1000,
+              ),
             );
         }
 
@@ -62,7 +62,7 @@ module.exports = {
 
         cooldown.set(
           `${command.name}-${message.author.id}`,
-          Date.now() + command.cooldown
+          Date.now() + command.cooldown,
         );
 
         setTimeout(() => {
