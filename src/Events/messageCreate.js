@@ -45,22 +45,22 @@ export default {
           return message
             .reply({
               content: `Cooldown is currently active, please try again <t:${Math.floor(
-                new Date(nowDate + waitedDate).getTime() / 1000
+                new Date(nowDate + waitedDate).getTime() / 1000,
               )}:R>.`,
             })
             .then((msg) =>
               setTimeout(
                 () => msg.delete(),
                 cooldown.get(`${command.name}-${message.author.id}`) -
-                  Date.now()
-              )
+                  Date.now(),
+              ),
             );
         }
 
         command.prefixRun(client, message, args);
         cooldown.set(
           `${command.name}-${message.author.id}`,
-          Date.now() + command.cooldown
+          Date.now() + command.cooldown,
         );
         setTimeout(() => {
           cooldown.delete(`${command.name}-${message.author.id}`);
