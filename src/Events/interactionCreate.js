@@ -31,26 +31,26 @@ module.exports = {
                 Date.now()),
           ).getTime();
           if (cooldown.has(`${command.name}-${interaction.user.id}`)) {
-              return interaction
-                .reply({
-                  content: `Cooldown is currently active, please try again <t:${Math.floor(
-                    new Date(nowDate + waitedDate).getTime() / 1000
-                  )}:R>.`,
-                  ephemeral: true,
-                })
+            return interaction
+              .reply({
+                content: `Cooldown is currently active, please try again <t:${Math.floor(
+                  new Date(nowDate + waitedDate).getTime() / 1000,
+                )}:R>.`,
+                ephemeral: true,
+              })
               .then(() =>
                 setTimeout(
                   () => interaction.deleteReply(),
                   cooldown.get(`${command.name}-${interaction.user.id}`) -
-                    Date.now()
-                )
+                    Date.now(),
+                ),
               );
           }
 
           command.prefixRun(client, interaction);
           cooldown.set(
             `${command.name}-${interaction.user.id}`,
-            Date.now() + command.cooldown
+            Date.now() + command.cooldown,
           );
           setTimeout(() => {
             cooldown.delete(`${command.name}-${interaction.user.id}`);

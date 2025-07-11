@@ -7,7 +7,7 @@ module.exports = {
     const processEvents = {
       unhandledRejection: "Unhandled promise rejection",
       uncaughtException: "Uncaught exception",
-      uncaughtExceptionMonitor: "Uncaught exception monitored"
+      uncaughtExceptionMonitor: "Uncaught exception monitored",
     };
 
     for (const [event, message] of Object.entries(processEvents)) {
