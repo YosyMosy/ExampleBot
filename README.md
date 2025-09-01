@@ -1,11 +1,11 @@
 # Example Discord Bot Handler - V14 (CommonJS)
 
-- **Project built on `discord.js` v14.**
-- **Minimum required Node.js version: v18**
-- **Example command setup can be found in [`src/Commands/info/ping.js`](https://github.com/memte/ExampleBot/blob/v14-commonjs/src/Commands/info/ping.js).**  
+- Project built on `discord.js` v14.
+- Minimum required Node.js version: v18
+- Example command setup can be found in [`src/Commands/info/ping.js`](https://github.com/memte/ExampleBot/blob/v14-commonjs/src/Commands/info/ping.js).
   For more details, visit the [Discord.js Guide](https://discordjs.guide/slash-commands/advanced-creation.html).
 
-- **Note: Remember to configure your settings in the [`config.js`](https://github.com/memte/ExampleBot/blob/v14-commonjs/src/Base/config.js) file and Don't forget to prepare a .env file in the same way as in [`.env.example`](https://github.com/memte/ExampleBot/blob/v14-commonjs/.env.example)**!
+- **Note:** Remember to configure your settings in the [`config.js`](https://github.com/memte/ExampleBot/blob/v14-commonjs/src/Base/config.js) file and Don't forget to prepare a .env file in the same way as in [`.env.example`](https://github.com/memte/ExampleBot/blob/v14-commonjs/.env.example)!
 
 ## Star History
 
