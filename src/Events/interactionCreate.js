@@ -47,7 +47,7 @@ module.exports = {
               );
           }
 
-          command.prefixRun(client, interaction);
+          command.slashRun(client, interaction);
           cooldown.set(
             `${command.name}-${interaction.user.id}`,
             Date.now() + command.cooldown,
