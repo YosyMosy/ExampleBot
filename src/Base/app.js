@@ -1,8 +1,7 @@
 const { Client, Intents } = require("discord.js");
 const { readdirSync } = require("node:fs");
-const config = require("./config.js");
 
-class BaseClient {
+module.exports = class BaseClient {
   constructor(token) {
     this.client = new Client({
       intents: Object.values(Intents.FLAGS),
@@ -32,6 +31,3 @@ class BaseClient {
   }
 }
 
-const token = config.token;
-const client = new BaseClient(token);
-client.start();
