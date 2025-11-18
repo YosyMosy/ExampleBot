@@ -1,3 +1,6 @@
+> [!WARNING]  
+> ⚠️ This project uses Discord.js v13 which is deprecated — we do not recommend using it. Please use v14 instead.
+
 # Example Discord Bot Handler - V13
 
 - Project built on `discord.js` v13.
