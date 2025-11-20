@@ -1,5 +1,5 @@
 > [!WARNING]  
-> This project uses Discord.js v13 which is deprecated — we do not recommend using it. Please use [v14](https://github.com/memte/ExampleBot/tree/v14-commonjs) instead and follow the [official migration guide](https://discordjs.guide/legacy/additional-info/changes-in-v14).
+> This project uses Discord.js v13 which is deprecated — we do not recommend using it. Please use [v14](https://github.com/memte/ExampleBot/tree/v14) instead and follow the [official migration guide](https://discordjs.guide/legacy/additional-info/changes-in-v14).
 
 # Example Discord Bot Handler - V13
 
