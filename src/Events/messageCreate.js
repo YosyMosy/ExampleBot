@@ -1,5 +1,8 @@
 import { ChannelType, Collection, Events } from "discord.js";
 import config from "../Base/config.js";
+// 1. PANGGIL: Import schema MongoDB (pastikan ekensinya .js di akhir jika pakai ES Modules)
+import User from "../Models/userSchema.js"; 
+
 const cooldown = new Collection();
 
 export default {
@@ -14,6 +17,22 @@ export default {
 		if (message.channel.type === ChannelType.DM) {
 			return;
 		}
+
+		// 2. LOGIKA MONGODB: Tambah XP setiap kali user mengirim pesan di server (bukan DM)
+		try {
+			let userData = await User.findOne({ userId: message.author.id, guildId: message.guild.id });
+			
+			if (!userData) {
+				userData = new User({ userId: message.author.id, guildId: message.guild.id });
+			}
+			
+			userData.xp += 10; // Menambah 10 XP setiap mengetik chat
+			await userData.save();
+		} catch (err) {
+			console.error("Gagal menyimpan data ke MongoDB:", err);
+		}
+
+		// --- Batas logika MongoDB, di bawah ini kode bawaan perintah prefix bot kamu ---
 
 		const { prefix } = config;
 		if (!message.content.startsWith(prefix)) {
